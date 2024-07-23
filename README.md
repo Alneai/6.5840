@@ -6,5 +6,5 @@
 
 注意点：
 1. 使用临时文件 `os.CreateTemp("", "tmp-")` 防止中途崩溃的worker写入文件
-2. 使用 `json.NewEncoder().Encode(&kv)` 将json写入文件
+2. 使用 `json.NewEncoder().Encode(&kv)` 将序列化的json写入文件
 3. 为避免频繁打开文件，键值对按照 `ReduceId` 排序，批量写入文件中
